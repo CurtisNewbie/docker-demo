@@ -1,1 +1,1 @@
-docker image build alpine-ctn/ -t alpine-ctn:latest
+docker image build . -t alpine-ctn:latest
