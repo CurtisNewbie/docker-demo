@@ -1,1 +1,1 @@
-docker image build . -t alpine-redis 
+docker image build . -t alpine-redis:v1.0
