@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  redis-demo:
+    image: redis:alpine
+    # image: "alpine-redis:v1.0"
+    # ports:
+    #   - 6379:6379
+    #   - 6380:6380
+    networks:
+      - demo-net
+  spring-demo:
+    # build: ../spring-on-docker
+    image: "spring-on-docker:latest"
+    ports:
+      - 8080:8080
+    networks:
+      - demo-net
+    volumes:
+      - ./file:/file
+    depends_on:
+      - redis-demo
+    links:
+      - redis-demo
+
+# configure networks
+networks:
+  demo-net:
