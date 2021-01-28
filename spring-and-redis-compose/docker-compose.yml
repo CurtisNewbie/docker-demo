@@ -19,8 +19,8 @@ services:
       - ./file:/file
     depends_on:
       - redis-demo
-    links:
-      - redis-demo
+    # links:
+    #   - redis-demo
 
 # configure networks
 networks:
